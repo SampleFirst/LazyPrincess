@@ -47,7 +47,10 @@ from plugins.yt_lazy_dl_btn import youtube_dl_call_back
 from urllib.parse import quote_plus
 from util.file_properties import get_name, get_hash, get_media_file_size
 import logging
+
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.ERROR)
+
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 req_channel = REQ_CHANNEL
