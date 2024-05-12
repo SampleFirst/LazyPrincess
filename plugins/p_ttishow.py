@@ -273,7 +273,7 @@ async def list_chats(bot, message):
     msg = await message.reply('Getting List Of chats')
     chats = await db.get_all_chats()
     out = "Chats Saved In DB Are:\n\n"
-    for chat in chats:
+    async for chat in chats:
         members_count = await bot.get_chat_members_count(chat['id'])
         out += f"**Title:** `{chat['title']}`\n**- ID:** `{chat['id']}`\n**- Members Count:** `{members_count}`"
         if chat['chat_status']['is_disabled']:
